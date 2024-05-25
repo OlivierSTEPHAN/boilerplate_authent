@@ -1,0 +1,23 @@
+# Use postgres/example user/password credentials
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: todo_user
+      POSTGRES_PASSWORD: todo_password
+      POSTGRES_DB: todo_db
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+    - "9080:8080"
+  smtp4dev:
+    image: rnwood/smtp4dev:v3
+    restart: always
+    ports:
+    - "9081:80"
+    - "9025:25"
