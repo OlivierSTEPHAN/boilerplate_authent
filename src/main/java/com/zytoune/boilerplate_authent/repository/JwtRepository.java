@@ -8,7 +8,6 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 public interface JwtRepository extends JpaRepository<Jwt, Integer> {
-    Optional<Jwt> findByValue(String token);
 
     @Query("FROM Jwt j WHERE j.value = :value AND j.desactivated = :desactived AND j.expired = :expired")
     Optional<Jwt> findValidTokenByValue(String value, boolean desactived, boolean expired);
