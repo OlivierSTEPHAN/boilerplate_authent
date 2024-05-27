@@ -21,7 +21,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Slf4j
 @AllArgsConstructor
-@RequestMapping(consumes = APPLICATION_JSON_VALUE)
+@RequestMapping("user")
 @RestController
 public class UserController {
 
